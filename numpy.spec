@@ -2,7 +2,7 @@
 
 Name:           numpy
 Version:        1.16.5
-Release:        2
+Release:        3
 Epoch:          1
 Summary:        A fast multidimensional array facility for Python
 
@@ -173,9 +173,15 @@ popd &> /dev/null
 
 %files -n python3-numpy-f2py
 %{_bindir}/f2py3
-%{_bindir}/f2py3.7
+%{_bindir}/f2py3.*
 %{python3_sitearch}/%{name}/f2py
 
 %changelog
+* Sat Jun 20 2020 fuyangqing<fuyangqing@huawei.com> - 1.16.5-3
+- Type:bugfix
+- ID:N/A
+- SUGA:NA
+- DESC:change spec hardcode the dependent python version number
+
 * Tue Oct 22 2019 openEuler Buildteam <buildteam@openeuler.org> - 1.16.5-1
 - Package init
