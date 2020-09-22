@@ -2,7 +2,7 @@
 
 Name:           numpy
 Version:        1.16.5
-Release:        3
+Release:        4
 Epoch:          1
 Summary:        A fast multidimensional array facility for Python
 
@@ -27,10 +27,7 @@ Summary:        A fast multidimensional array facility for Python
 
 BuildRequires:  python2-devel
 BuildRequires:  python2-setuptools
-BuildRequires:  python2-nose
 BuildRequires:  python2-pytest
-
-Requires:       python2-nose
 
 Provides:       numpy = %{epoch}:%{version}-%{release}
 Provides:       numpy%{?_isa} = %{epoch}:%{version}-%{release}
@@ -63,7 +60,6 @@ License:        BSD
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
-BuildRequires:  python3-nose
 BuildRequires:  python3-pytest
 
 Provides:       python3-numpy-doc
@@ -177,6 +173,12 @@ popd &> /dev/null
 %{python3_sitearch}/%{name}/f2py
 
 %changelog
+* Tue Sep 22 2020 shixuantong<shixuantong> - 1.16.5-4
+- Type:NA
+- ID:N/A
+- SUGA:NA
+- DESC:remove python-nose
+
 * Sat Jun 20 2020 fuyangqing<fuyangqing@huawei.com> - 1.16.5-3
 - Type:bugfix
 - ID:N/A
