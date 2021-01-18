@@ -2,11 +2,11 @@
 
 Name:           numpy
 Version:        1.16.5
-Release:        5
+Release:        6
 Epoch:          1
 Summary:        A fast multidimensional array facility for Python
 
-License:        BSD and Python
+License:        BSD and Python and ASL 2.0 and BSD-2-Clause
 URL:            http://www.numpy.org/
 Source0:        https://github.com/%{name}/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
 
@@ -88,8 +88,22 @@ popd &> /dev/null
 %files -n python3-numpy
 %license LICENSE.txt
 %doc THANKS.txt site.cfg.example
+%{python3_sitearch}/%{name}/__pycache__/*
 %dir %{python3_sitearch}/%{name}
-%{python3_sitearch}/%{name}/*
+%{python3_sitearch}/%{name}/*.py*
+%{python3_sitearch}/%{name}/core
+%{python3_sitearch}/%{name}/distutils
+%{python3_sitearch}/%{name}/doc
+%{python3_sitearch}/%{name}/fft
+%{python3_sitearch}/%{name}/lib
+%{python3_sitearch}/%{name}/linalg
+%{python3_sitearch}/%{name}/ma
+%{python3_sitearch}/%{name}/random
+%{python3_sitearch}/%{name}/testing
+%{python3_sitearch}/%{name}/tests
+%{python3_sitearch}/%{name}/compat
+%{python3_sitearch}/%{name}/matrixlib
+%{python3_sitearch}/%{name}/polynomial
 %{python3_sitearch}/%{name}-*.egg-info
 %exclude %{python3_sitearch}/%{name}/LICENSE.txt
 
@@ -101,6 +115,12 @@ popd &> /dev/null
 
 
 %changelog
+* Mon Jan 18 2021 tianwei<tianwei12@huawei.com> - 1.16.5-6
+- Type:NA
+- ID:N/A
+- SUGA:NA
+- DESC:fix package files
+
 * Fri Oct 30 2020 tianwei<tianwei12@huawei.com> - 1.16.5-5
 - Type:NA
 - ID:N/A
