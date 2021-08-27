@@ -1,17 +1,18 @@
 %global modname numpy
 
 Name:           numpy
-Version:        1.16.5
-Release:        6
+Version:        1.18.5
+Release:        1
 Epoch:          1
 Summary:        A fast multidimensional array facility for Python
 
-License:        BSD and Python and ASL 2.0 and BSD-2-Clause
+License:        ASL 2.0
 URL:            http://www.numpy.org/
-Source0:        https://github.com/%{name}/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
+Source0:        https://files.pythonhosted.org/packages/01/1b/d3ddcabd5817be02df0e6ee20d64f77ff6d0d97f83b77f65e98c8a651981/numpy-1.18.5.zip
 
 BuildRequires:  openblas-devel
-BuildRequires:  lapack-devel gcc-gfortran python3-Cython 
+BuildRequires:  lapack-devel gcc-gfortran
+BuildRequires:  python3-Cython >= 0.29.21
 
 %description
 NumPy is the fundamental package for scientific computing with Python. It contains among other things:
@@ -88,22 +89,8 @@ popd &> /dev/null
 %files -n python3-numpy
 %license LICENSE.txt
 %doc THANKS.txt site.cfg.example
-%{python3_sitearch}/%{name}/__pycache__/*
 %dir %{python3_sitearch}/%{name}
-%{python3_sitearch}/%{name}/*.py*
-%{python3_sitearch}/%{name}/core
-%{python3_sitearch}/%{name}/distutils
-%{python3_sitearch}/%{name}/doc
-%{python3_sitearch}/%{name}/fft
-%{python3_sitearch}/%{name}/lib
-%{python3_sitearch}/%{name}/linalg
-%{python3_sitearch}/%{name}/ma
-%{python3_sitearch}/%{name}/random
-%{python3_sitearch}/%{name}/testing
-%{python3_sitearch}/%{name}/tests
-%{python3_sitearch}/%{name}/compat
-%{python3_sitearch}/%{name}/matrixlib
-%{python3_sitearch}/%{name}/polynomial
+%{python3_sitearch}/%{name}/*
 %{python3_sitearch}/%{name}-*.egg-info
 %exclude %{python3_sitearch}/%{name}/LICENSE.txt
 
@@ -115,6 +102,9 @@ popd &> /dev/null
 
 
 %changelog
+* Thu Aug 24 2021 wulei<wulei80@huawei.com> - 1.18.5-1
+- update to 1.18.5
+
 * Mon Jan 18 2021 tianwei<tianwei12@huawei.com> - 1.16.5-6
 - Type:NA
 - ID:N/A
