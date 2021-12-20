@@ -1,18 +1,18 @@
 %global modname numpy
 
 Name:           numpy
-Version:        1.18.5
+Version:        1.21.4
 Release:        1
 Epoch:          1
 Summary:        A fast multidimensional array facility for Python
 
 License:        ASL 2.0
 URL:            http://www.numpy.org/
-Source0:        https://files.pythonhosted.org/packages/01/1b/d3ddcabd5817be02df0e6ee20d64f77ff6d0d97f83b77f65e98c8a651981/numpy-1.18.5.zip
+Source0:        https://files.pythonhosted.org/packages/fb/48/b0708ebd7718a8933f0d3937513ef8ef2f4f04529f1f66ca86d873043921/numpy-1.21.4.zip
 
 BuildRequires:  openblas-devel
 BuildRequires:  lapack-devel gcc-gfortran
-BuildRequires:  python3-Cython >= 0.29.21
+BuildRequires:  python3-Cython >= 0.29.24
 
 %description
 NumPy is the fundamental package for scientific computing with Python. It contains among other things:
@@ -102,6 +102,9 @@ popd &> /dev/null
 
 
 %changelog
+* Mon Dec 13 2021 shixuantong <shixuantong@huawei.com> - 1.21.4-1
+- update version to 1.21.4
+
 * Thu Aug 24 2021 wulei<wulei80@huawei.com> - 1.18.5-1
 - update to 1.18.5
 
