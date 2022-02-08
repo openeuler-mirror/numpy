@@ -2,7 +2,7 @@
 
 Name:           numpy
 Version:        1.21.4
-Release:        2
+Release:        3
 Epoch:          1
 Summary:        A fast multidimensional array facility for Python
 
@@ -15,6 +15,7 @@ BuildRequires:  lapack-devel gcc-gfortran
 BuildRequires:  python3-Cython >= 0.29.24
 
 Patch0:         backport-CVE-2021-41496.patch
+Patch1:         backport-CVE-2021-41495.patch
 
 %description
 NumPy is the fundamental package for scientific computing with Python. It contains among other things:
@@ -104,6 +105,9 @@ popd &> /dev/null
 
 
 %changelog
+* Tue Feb 08 2022 renhongxun <renhongxun@h-partners.com> - 1.21.4-3
+- fix CVE-2021-41495
+
 * Tue Jan 04 2022 yuanxin <yuanxin24@huawei.com> - 1.21.4-2
 - fix CVE-2021-41496 
 
