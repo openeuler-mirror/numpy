@@ -1,0 +1,46 @@
+From ca19adc35b02cff09844228f2562b1d1522e2fe4 Mon Sep 17 00:00:00 2001
+From: wang--ge <wang__ge@126.com>
+Date: Mon, 25 Apr 2022 09:49:00 +0800
+Subject: [PATCH] add loongarch architecture support
+
+---
+ numpy/core/include/numpy/npy_cpu.h    | 3 +++
+ numpy/core/include/numpy/npy_endian.h | 1 +
+ 2 files changed, 4 insertions(+)
+
+diff --git a/numpy/core/include/numpy/npy_cpu.h b/numpy/core/include/numpy/npy_cpu.h
+index bc1fad7..e975b01 100644
+--- a/numpy/core/include/numpy/npy_cpu.h
++++ b/numpy/core/include/numpy/npy_cpu.h
+@@ -18,6 +18,7 @@
+  *              NPY_CPU_ARCEL
+  *              NPY_CPU_ARCEB
+  *              NPY_CPU_RISCV64
++ *              NPY_CPU_LOONGARCH
+  *              NPY_CPU_WASM
+  */
+ #ifndef _NPY_CPUARCH_H_
+@@ -103,6 +104,8 @@
+     #define NPY_CPU_ARCEB
+ #elif defined(__riscv) && defined(__riscv_xlen) && __riscv_xlen == 64
+     #define NPY_CPU_RISCV64
++#elif defined(__loongarch__)
++    #define NPY_CPU_LOONGARCH
+ #elif defined(__EMSCRIPTEN__)
+     /* __EMSCRIPTEN__ is defined by emscripten: an LLVM-to-Web compiler */
+     #define NPY_CPU_WASM
+diff --git a/numpy/core/include/numpy/npy_endian.h b/numpy/core/include/numpy/npy_endian.h
+index aa367a0..82609ed 100644
+--- a/numpy/core/include/numpy/npy_endian.h
++++ b/numpy/core/include/numpy/npy_endian.h
+@@ -49,6 +49,7 @@
+             || defined(NPY_CPU_PPC64LE)       \
+             || defined(NPY_CPU_ARCEL)         \
+             || defined(NPY_CPU_RISCV64)       \
++	    || defined(NPY_CPU_LOONGARCH)     \
+             || defined(NPY_CPU_WASM)
+         #define NPY_BYTE_ORDER NPY_LITTLE_ENDIAN
+     #elif defined(NPY_CPU_PPC)                \
+-- 
+2.27.0
+

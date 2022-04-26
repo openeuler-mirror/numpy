@@ -2,7 +2,7 @@
 
 Name:           numpy
 Version:        1.21.4
-Release:        3
+Release:        4
 Epoch:          1
 Summary:        A fast multidimensional array facility for Python
 
@@ -16,6 +16,7 @@ BuildRequires:  python3-Cython >= 0.29.24
 
 Patch0:         backport-CVE-2021-41496.patch
 Patch1:         backport-CVE-2021-41495.patch
+Patch2:         0001-add-loongarch-architecture-support.patch
 
 %description
 NumPy is the fundamental package for scientific computing with Python. It contains among other things:
@@ -105,6 +106,9 @@ popd &> /dev/null
 
 
 %changelog
+* Mon Apr 25 2022 Ge Wang <wangge20@h-partners.com> - 1.21.4-4
+- add loongarch architecture support
+
 * Tue Feb 08 2022 renhongxun <renhongxun@h-partners.com> - 1.21.4-3
 - fix CVE-2021-41495
 
